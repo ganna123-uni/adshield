@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdShield Security Dashboard</title>
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/app.js" defer></script>
+</head>
+<body>
+<main>
+    <h1>🛡️ AdShield</h1>
+    <p>Malvertising Detection & Defense Dashboard</p>
+
+    <section>
+        <h2>Security Statistics</h2>
+        <p>Total Ads Tested: <strong id="total">0</strong></p>
+        <p>Ads Allowed: <strong id="allowed">0</strong></p>
+        <p>Ads Blocked: <strong id="blocked">0</strong></p>
+    </section>
+
+    <section>
+        <h2>Advertisement Testing</h2>
+        <p>Test a harmless advertisement.</p>
+        <button data-scenario="normal">Test Normal Ad</button>
+
+        <p>Test a simulated suspicious advertisement.</p>
+        <button data-scenario="suspicious">Test Suspicious Ad</button>
+
+        <p id="result" role="status" aria-live="polite">
+            Waiting for a test...
+        </p>
+    </section>
+
+    <section>
+        <h2>Recent Security Events</h2>
+        <ul id="events">
+            <li>No events yet.</li>
+        </ul>
+    </section>
+
+    <button id="refresh">Refresh Dashboard</button>
+</main>
+</body>
+</html>
